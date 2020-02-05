@@ -253,7 +253,7 @@
             // console.log(alasan[i].value);
 
             object[i] = new Dataobject(date_absensi, class_name_param, kegiatan, sermon, worship_leader, guitar, id[i].value, kehadiran[i].checked, alasan[i].value);
-            // console.log(object[i]);
+
         }
 
         // array.push(date_absensi, class_name_param, kegiatan, sermon, worship_leader, guitar);

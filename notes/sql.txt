@@ -1,0 +1,15 @@
+select * from data_guru 
+JOIN service
+on data_guru.id_guru=service.id_guru 
+WHERE data_guru.id_guru=2
+
+CREATE OR REPLACE FUNCTION indexable_month_day(date) RETURNS TEXT as $BODY$
+  SELECT to_char($1, 'MM-DD');
+$BODY$ language 'sql' IMMUTABLE STRICT;
+
+
+SELECT * FROM data_anak 
+WHERE 
+    indexable_month_day(birth_date) >= indexable_month_day(CURRENT_DATE)
+and
+    indexable_month_day(birth_date) <= '12-31';
